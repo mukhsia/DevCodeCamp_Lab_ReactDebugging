@@ -11,7 +11,9 @@ const App = () => {
 
 	useEffect(() => {
 		setBooks(generateBookData()); // **DO NOT EDIT THIS LINE!**
-	});
+	}, []);
+
+	console.log(books);
 
 	return (
 		<div>
