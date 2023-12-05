@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import BookTable from './components/BookTable/BookTable';
+import NewBookForm from './components/NewBookForm/NewBookForm';
 
 // generateBookData is used to simulate source data.
 // debug the "books" state variable to identify what that data looks like.
@@ -17,6 +18,8 @@ const App = () => {
 	return (
 		<div>
 			<h1>Book Depot</h1>
+
+			<NewBookForm books={books}/>
 
 			<BookTable books={books}/>
 		</div>
