@@ -6,7 +6,7 @@ import './NewBookForm.css';
 // and add them as a new book object to the "books" array in the App component.
 // How can you give NewBookForm access to the App's "books" state? (not just the variable)
 
-const NewBookForm = () => {
+const NewBookForm = ({ books = [] }) => {
 	const [title, setTitle] = useState();
 	const [author, setAuthor] = useState();
 	const [datePublished, setDatePublished] = useState();
@@ -29,8 +29,9 @@ const NewBookForm = () => {
 	return (
 		<form onSubmit={handleSubmit} className="form">
 			<InputField label="Title" value={title} onChange={setTitle} />
-			<InputField label="Author" value={author} onChange={author} />
-			<InputField label="Date Published" value={datePublished} type="date" />
+			<InputField label="Author" value={author} onChange={setAuthor} />
+			<InputField label="Date Published" value={datePublished} onChange={setDatePublished} type="date" />
+			<InputField label="Pages" value={pages} onChange={setPages} />
 			<button type="submit">Add Book</button>
 		</form>
 	);
